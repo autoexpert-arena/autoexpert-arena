@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html crosspilot=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="text/javascript" async="" src="./autoexpert-arena_files/analytics.js.download"></script><script type="text/javascript" async="" src="./autoexpert-arena_files/analytics.js(1).download"></script><script async="" src="./autoexpert-arena_files/analytics.js(1).download"></script><script async="" src="./autoexpert-arena_files/analytics.js(2).download"></script><script type="text/javascript" async="" src="./autoexpert-arena_files/analytics.js(2).download"></script><script type="text/javascript" async="" src="./autoexpert-arena_files/analytics.js(3).download"></script><script type="text/javascript" async="" src="./autoexpert-arena_files/analytics.js(4).download"></script><script async="" src="./autoexpert-arena_files/js"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-139393959-1');
+  </script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="keywords" content="open-world vision, open-set recognition, long-tail, continual learning, lifelong learning, deep learning, computer vision, few-shot learning, zero-shot learning, active learning, transfer learning, catastrophic forgetting, self-supervised learning, weakly supervised learning, uncertainty, interpretability, anomaly detection, robustness, generalization, large-scale testing, simulation testing, evaluation metrics, train-test domain gap, streaming data, few-shot annotation, synthetic data, data bias, diverse annotations, multi-modality, AI safety, autonomous driving, medical image, auto diagnosis, real-world applications, inter-disciplinary research, carnegie mellon, machine learning, finetuning, foundation model, generative AI">
+
+ <link rel="shortcut icon" href="./autoexpert-arena_files/logo_AutoExpert.jpg">
+
+<style>
+#sidebar { margin-left : 25px; border : 0 solid black; float : right; margin-bottom : 0;}
+</style>
+
+
+  <title>Visual Perception via Learning in an Open World</title>
+  <meta name="description" content="computer vision in the real open world">
+
+  <!--Open Graph Related Stuff-->
+  <meta property="og:title" content="Auto-Annotation from Expert-Crafted Guidelines">
+  <meta property="og:url" content="https://autoexpert-arena.github.io/autoexpert-arena_5th.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://autoexpert-arena.github.io/autoexpert-arena_files/logo_AutoExpert.jpg">
+
+  <!--
+  <meta property="og:description" content="Auto-Annotation from Expert-Crafted Guidelines" />
+  <meta property="og:site_name" content="AutoExpert">
+  <meta property="og:image:url" content="https://autoexpert-arena.github.io/autoexpert-arena_files/logo_AutoExpert.jpg"/>
+  -->
+
+  <!--Twitter Card Stuff-->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@aimerykong">
+  <meta name="twitter:title" content="Auto-Annotation from Expert-Crafted Guidelines">
+  <meta name="twitter:image" content="https://autoexpert-arena.github.io/autoexpert-arena_files/logo_AutoExpert.jpg">
+  <meta name="twitter:description" content="Auto-Annotation from Expert-Crafted Guidelines">
+  <meta name="twitter:url" content="https://autoexpert-arena.github.io/autoexpert-arena_5th.html">
+
+
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./autoexpert-arena_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./autoexpert-arena_files/bootstrap-theme.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" type="text/css" href="./autoexpert-arena_files/style.css" media="screen,projection">
+<script type="text/javascript" src="./autoexpert-arena_files/US_chrome.js.download" data-awssuidacr="Gwn9tJNkiv3kTZfxZNTv1BabS0FFeorz"></script><script type="text/javascript" async="" src="./autoexpert-arena_files/taas"></script><style>.ytdl-handle-btn {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M3 19h18v2H3v-2zM13 9h7l-8 8-8-8h7V1h2v8z' fill='rgba(54,122,245,1)'/%3E%3C/svg%3E");
+            background-size: 100%;
+            cursor: pointer;
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            margin-left: 8px;
+        }</style></head>
+
+  <body>
+
+    <!-- <div class="top-strip"></div> -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://autoexpert-arena.github.io/">AutoExpert</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li>
+
+            <!--  TODO: change logo  -->
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#overview">Overview</a>
+        </li>
+        <li>
+          <a href="#schedule">Schedule</a>
+        </li>
+        <li>
+          <a href="#dates">Dates</a>
+        </li>
+        <li>
+          <a href="#speakers">Speakers</a>
+        </li>
+        <li>
+          <a href="#competition">Competition</a>
+        </li>
+        <li>
+          <a href="#organizers">Organizers</a>
+        </li>
+        <!--li>
+          <a href="#sponsors">Sponsors</a>
+        </li-->
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="page-content">
+
+
+
+    <div class="row">
+      <div class="col-xs-12">
+      <div id="sidebar"><img src="./autoexpert-arena_files/logo_AutoExpert.jpg" width="100"></div>
+        <h1><b>Visual Perception via Learning in an Open World</b> <div class="instructorphoto"></div></h1>
+        <h4><b>The 5th workshop on Open World Vision</b> &nbsp;  &nbsp; &nbsp; <b><font color="red">See you there soon!</font></b> <div class="instructorphoto"></div></h4>
+	<h4>Location: <b>104 C</b>, Denver CO</h4>
+	<h4>Time: <b>TBD,</b></h4>
+        <h4>in conjunction with <a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank">CVPR 2026</a>, Denver CO, USA</h4>
+	<!--h4><b><font color="red">See you there soon!</font></b></h4-->
+	<!--h4><b><font color="red">Recordings: <a href="https://youtu.be/pOT-jftyoNE">part-1</a>, <a href="https://youtu.be/Y3lYS_foICo">part-2</a>.</font></b></h4-->
+	      
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Overview -->
+    <p><a class="anchor" id="overview"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Overview</h2>
+        <p>
+Vast amounts of high-quality annotated data are essential for training powerful models when solving numerous real-world tasks, e.g., autonomous vehicles, ecological monitoring, bioimage analysis, medical image analysis, etc. Yet, in specialized domains, it is impractical for domain-experts to manually label the vast quantities of data. To scale the annotation process, the current paradigm is for domain experts to design detailed guidelines and then teach non-expert annotators to apply them (cf. data labeling services provided by companies such as Scale AI). However, as these annotators lack domain knowledge, their labels are often erroneous, subjective, biased, and inconsistent. Furthermore, this entire process is notoriously labor-intensive, tedious, and costly. This workshop endeavors to automate data annotation directly from expert-crafted annotation guidelines, which typically use a few visual images and textual descriptions to define object categories or animal species of interest (e.g., for recognition and detection). In plain language, we aspire to replace human annotators with AI agents.
+
+	<br>
+	</p>
+	  </div>
+    </div>
+
+    <hr>
+    <!-- topics -->
+    <p><a class="anchor" id="topics"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Topics</h2>
+        <p>
+	Topics of interest include, but are not limited to:
+        </p>
+        <ul>
+          <li><b>data</b>: domain-specific datasets</li>
+          <li><b>concepts</b>: ontology/taxonomy, expert-in-the-loop.</li>
+          <li><b>learning</b>: few-shot learning, semi-supervised learning, domain adaptation/generalization, open-world learning, foundation model adaptation.</li>
+          <li><b>social impact</b>: inter-disciplinary research, AI for science.</li>
+          <li><b>misc</b>:  datasets, benchmarks, robustness, generalization, etc.</li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <hr>
+    <!-- examples -->
+    <p><a class="anchor" id="examples"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Examples</h2>
+        <p>Let's consider the following motivational examples.
+        </p>
+        <ul>
+          <li><b>Open-world data follows long-tail distributions</b>, where real-world tasks often emphasize the rare observations. This mismatch between data distribution and task demands necessitates careful development of perception models. Visual perception algorithms can struggle to recognize rare examples, leading to serious consequences. For example, a visual recognition model can misclassify underrepresented minorities and make unethical predictions 
+		  (ref. <a href="https://www.wired.com/story/when-it-comes-to-gorillas-google-photos-remains-blind" target="_blank">case1</a>, 
+		  <a href="https://www.nytimes.com/2021/09/03/technology/facebook-ai-race-primates.html" target="_blank">case2</a>). Even foundation models also suffer from long-tailed distributions of pretraining data (ref. <a href="https://shubhamprshr27.github.io/neglected-tails-of-vlms/" target="_blank">link</a>).
+
+	  </li>
+          <li><b>The open-world presents unknown examples</b>,
+		  Largely due to the long-tail nature of data distribution, 
+largely due to the long-tail nature of the data distribution. Visual perception models operating in the open world are invariably confronted with unfamiliar instances. Failure to detect these unknowns can lead to serious consequences. For example, a Tesla Model 3 failed to recognize an overturned truck as an unknown object, resulting in a crash (ref. <a href="https://www.forbes.com/sites/bradtempleton/2020/06/02/tesla-in-taiwan-crashes-directly-into-overturned-truck-ignores-pedestrian-with-autopilot-on/?sh=4ce50aec58e5" target="_blank">case</a>).
+	  </li>
+          <li><b>The open world requires aligning ontologies</b>. To define a domain of interest, such as autonomous driving or the fashion industry, we typically establish an ontology (e.g., class labels or fashion styles). However, in the real open world, these ontologies constantly evolve (ref. <a href="https://linzhiqiu.github.io/papers/leco/" target="_blank">link</a>), leading to a mismatch between the concepts defined for a task and those understood by pretrained (foundation) models (ref. <a href="https://github.com/anishmadan23/foundational_fsod" target="_blank">link</a>). For example, in the fashion industry, the fashion vocabulary must expand continuously as trends and styles change with each season. This raises a key question: how can we effectively train a model to align the constantly shifting ontolgoies or those understood by an "outdated" foundation model?
+
+
+
+
+		  The world of interest is changing over time, e.g., driving scenes (in different cities and under different weather), the search engine ("apple" means different things today and 20 years ago). This says that the data distribution and semantics are continually changing and <a href="https://linzhiqiu.github.io/papers/leco/">evolving</a>. How to address distribution shifts and concept drifts?
+	  </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <hr>
+    <!-- Speakers-->
+    <p><a class="anchor" id="speakers"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Speakers</h2>
+	<!--h3> <font color="red">More speakers are on the way!</font></h3-->
+    <br>
+          <div class="instructor">
+            <a href="http://aimerykong.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/shu.jpg"></div>
+              <div>Shu Kong</div>
+            </a>
+	    <div class="instructor-institute">UMacau</div><br>
+          </div>
+
+	<div class="instructor">
+            <a href="https://gkioxari.github.io" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/me_at_ark.jpg"></div>
+              <div>Georgia Gkioxari</div>
+            </a>
+            <div class="instructor-institute">Caltech</div><br>
+          </div>
+
+	<div class="instructor">
+            <a href="https://gvh.codes/" target="_blank">
+		    <div class="instructorphoto"><img src="./autoexpert-arena_files/grant_bw_1.jpg"></div>
+		    <div>Grant Van Horn</div>
+            </a>
+	    <div class="instructor-institute">UMass, Amherst</div><br>
+          </div>
+
+
+
+	<div class="instructor">
+            <a href="https://www.cs.cmu.edu/~dpathak" target="_blank">
+		    <div class="instructorphoto"><img src="./autoexpert-arena_files/Deepak_Pathak.jpg"></div>
+		    <div>Deepak Pathak</div>
+            </a>
+	    <div class="instructor-institute">CMU</div><br>
+          </div>
+
+
+	<!--div class="instructor">
+            <a href="https://www.sainingxie.com" target="_blank">
+		    <div class="instructorphoto"><img src="./autoexpert-arena_files/saining-xie.jpg"></div>
+		    <div>Saining Xie</div>
+            </a>
+	    <div class="instructor-institute">NYU</div><br>
+      </div-->
+
+
+          <div class="instructor">
+            <a href="https://www.cs.ox.ac.uk/people/yarin.gal/website/" target="_blank">
+		    <div class="instructorphoto"><img src="./autoexpert-arena_files/Yarin-Gal.jpg"></div>
+              <div>Yarin Gal</div>
+            </a>
+	    <div class="instructor-institute">University of Oxford</div><br>
+          </div>
+
+
+	      
+          <div class="instructor">
+            <a href="https://gunshigupta.netlify.app/" target="_blank">
+		    <div class="instructorphoto"><img src="./autoexpert-arena_files/gunshigupta.jpg"></div>
+              <div>Gunshi Gupta</div>
+            </a>
+	    <div class="instructor-institute">University of Oxford</div><br>
+          </div>
+
+
+	      
+
+	<div class="instructor">
+            <a href="https://www.cs.cmu.edu/~abhinavg/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/abhinav-gupta.jpg"></div>
+              <div>Abhinav Gupta</div>
+            </a>
+            <div class="instructor-institute">CMU</div><br>
+          </div>
+
+	<div class="instructor">
+            <a href="https://www.cs.utexas.edu/~grauman/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/kristen.jpg"></div>
+              <div>Kristen Grauman</div>
+            </a>
+            <div class="instructor-institute">UT Austin</div><br>
+          </div>
+
+	<div class="instructor">            
+            <a href="https://lgui.web.illinois.edu/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/Liangyan-Gui.png"></div>
+              <div>Liangyan Gui</div>
+            </a>
+            <div class="instructor-institute">UIUC</div><br>
+          </div>
+
+	<div class="instructor">            
+            <a href="https://yxw.web.illinois.edu/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/yuxiong.png"></div>
+              <div>Yu-Xiong Wang</div>
+            </a>
+            <div class="instructor-institute">UIUC</div><br>
+          </div>
+
+
+	      
+	 <!--div class="instructor">
+            <a href="./" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/profile-dummy.jpg"></div>
+              <div>to be confirmed</div>
+            </a>
+            <div class="instructor-institute"> </div><br><br>
+          </div>
+
+	 <div class="instructor">
+            <a href="./" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/profile-dummy.jpg"></div>
+              <div>to be confirmed</div>
+            </a>
+            <div class="instructor-institute"> </div><br><br>
+          </div-->
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><hr>
+
+
+    <!-- Organizers -->
+
+    <p><a class="anchor" id="organizers"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Organizers</h2>
+    <p class="important">Please contact Shu Kong with any questions: aimerykong [at] gmail [dot] com </p>
+    <br>
+        <div>
+          <div class="instructor">
+            <a href="http://aimerykong.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/shu.jpg"></div>
+              <div>Shu Kong</div>
+            </a>
+	    <div class="instructor-institute">UMacau</div><br>
+          </div>
+
+	<div class="instructor">
+            <a href="https://beerys.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/sara-beery.jpg"></div>
+              <div>Sara Beery</div>
+            </a>
+            <div class="instructor-institute">MIT</div><br>
+          </div>
+
+
+          <div class="instructor">
+            <a href="https://robotics.umich.edu/people/faculty/jason-corso/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/jason-corso.jpg"></div>
+              <div>Jason Corso</div>
+            </a>
+            <div class="instructor-institute">UMich & Voxel51</div>
+          </div>
+	 
+          
+          <div class="instructor">
+            <a href="https://people.cs.umass.edu/~smaji/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/subhransu.jpg"></div>
+              <div>Subhransu Maji</div>
+            </a>
+	    <div class="instructor-institute">UMass</div><br>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+
+
+
+<!-- Advisory Board  -->
+   
+    <p><a class="anchor" id="organizers"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Advisory Board</h2>
+	  <div class="instructor">
+            <a href="http://www.cs.cmu.edu/~deva/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/deva.jpg"></div>
+              <div>Deva Ramanan</div>
+            </a>
+            <div class="instructor-institute">Carnegie Mellon University</div><br>
+          </div>
+
+          
+        <div class="instructor">
+            <a href="https://sergebelongie.github.io/" target="_blank">
+		    <div class="instructorphoto"><img src="./autoexpert-arena_files/serge.jpg"></div>
+		    <div>Serge Belongie</div>
+            </a>
+	    <div class="instructor-institute">University of Copenhagen</div><br>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+<br><hr>
+
+
+
+
+<p><a class="anchor" id="speakers"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Challenge Organizers</h3>
+    <br>
+
+
+
+	<div class="instructor">
+            <a href="http://aimerykong.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/shu.jpg"></div>
+              <div>Shu Kong</div>
+            </a>
+	    <div class="instructor-institute">UMacau</div><br>
+          </div>
+
+
+          
+
+
+
+          <div class="instructor">
+            <a href="https://shenqq377.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/qianqian-shen.jpg"></div>
+              <div>Qianqian Shen</div>
+            </a>
+            <div class="instructor-institute">Zhejiang University</div><br>
+          </div>
+
+
+	<div class="instructor">
+            <a href="https://ics.uci.edu/~yunhaz5/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/yunhan-zhao.jpg"></div>
+              <div>Yunhan Zhao</div>
+            </a>
+            <div class="instructor-institute">Google / UCI</div><br>
+          </div>
+
+
+
+          <div class="instructor">
+            <a href="https://anishmadan23.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/anish-madan.jpg"></div>
+              <div>Anish Madan</div>
+            </a>
+            <div class="instructor-institute">CMU</div><br>
+          </div>
+
+
+	<div class="instructor">
+            <a href="http://www.neeharperi.com/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/neehar-peri.png"></div>
+              <div>Neehar Peri</div>
+            </a>
+            <div class="instructor-institute">CMU</div><br>
+          </div>
+
+
+
+	<div class="instructor">
+            <a href="http://www.cs.cmu.edu/~deva/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/deva.jpg"></div>
+              <div>Deva Ramanan</div>
+            </a>
+            <div class="instructor-institute">CMU</div><br>
+          </div>
+
+
+
+	</div>
+      </div>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a class="anchor" id="speakers"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Coordinators</h3>
+    <br>
+          <div class="instructor">
+            <a href="https://tian1327.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/tian-liu.jpg"></div>
+              <div>Tian Liu</div>
+            </a>
+            <div class="instructor-institute">Texas A&M</div><br>
+          </div>
+
+	  <!--div class="instructor">
+            <a href="https://shubhamprshr27.github.io/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/shubham-parashar.jpg"></div>
+              <div>Shubham Parashar</div>
+            </a>
+            <div class="instructor-institute">Texas A&M</div><br>
+      </div-->
+          
+
+	<div class="instructor">
+            <a href="https://ics.uci.edu/~yunhaz5/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/yunhan-zhao.jpg"></div>
+              <div>Yunhan Zhao</div>
+            </a>
+            <div class="instructor-institute">Google / UCI</div><br>
+          </div>
+
+
+	<div class="instructor">
+            <a href="http://www.neeharperi.com/" target="_blank">
+              <div class="instructorphoto"><img src="./autoexpert-arena_files/neehar-peri.png"></div>
+              <div>Neehar Peri</div>
+            </a>
+            <div class="instructor-institute">CMU</div><br>
+          </div>
+
+
+	</div>
+      </div>
+    <br>
+
+
+
+
+
+
+
+
+    <br><hr>
+    <!-- Important Dates -->
+    <p><a class="anchor" id="dates"></a></p>
+    <div class="row" style="margin-top:30px;">
+      <div class="col-xs-12 col-sm-12">
+        <h2>Important Dates and Details</h2>
+<!--h4> <font color="red">Links will be updated shortly!</font></h4-->
+        <ul>
+          <!--li><b>Signup to receive updates</b>: using <a href="https://autoexpert-arena.github.io/autoexpert-arena_3rd.html">this form</a></li-->
+	  <li><b>Submission deadline for Challenge-1: <a href="https://eval.ai/web/challenges/challenge-page/2478/overview" target="_blank">Object Instance Detection Challenge</a></b>: starting on March 24; submission deadline on June 5, 2025.</li>
+	  <li><b>Submission deadline for Challenge-2: <a href="https://eval.ai/web/challenges/challenge-page/2459/overview" target="_blank">Foundational Few-Shot Object Detection Challenge v2</a></b>: starting on March 1; submission deadline on June 8, 2025.
+	  Refer to the challenge page for important dates.</li>
+	  
+          <li><b>Workshop date</b>: June 11, 2025</li>
+        </ul>
+        <!--p>Oral presentation will be selected from challenge participants, e.g., winners and those having innovative ideas.</p-->
+      </div>
+    </div>
+
+
+
+
+    <hr>
+    <!-- Competition -->
+    <p><a class="anchor" id="competition"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Competition</h2>
+
+<!--h4> <font color="red">Links will be updated shortly!</font></h4-->
+	<!--h3> <font color="red">This part will be updated shortly!</font></h3-->
+        <!--p class="important"-->
+	We organize four challenge competitions this year.
+        <p></p>
+<ul>
+	  <li><b><a href="https://eval.ai/web/challenges/challenge-page/2478/overview" target="_blank">Object Instance Detection Challenge</a></b></li>
+	  <li><b><a href="https://eval.ai/web/challenges/challenge-page/2459/overview" target="_blank">Foundational Few-Shot Object Detection Challenge v2</a></b></li>
+
+        </ul>
+
+
+      <p></p></div>
+    </div>
+
+
+
+    <hr>
+
+
+
+
+    <!-- Schedule -->
+    <p><a class="anchor" id="schedule"></a></p>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Program Schedule</h2>
+
+<!--h3> <font color="red">This section is under construction!!!!</font></h3-->
+	<!--h3> <font color="red">The schedule will be finalized shortly!</font></h3-->
+      </div>
+    </div>
+    <div class="row slot-dark">
+      <div class="col-xs-12 col-sm-2">
+        CDT
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Event
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        Presenter / Title
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Links
+      </div>
+    </div>
+
+
+    <div class="row slot">
+      <div class="col-xs-12 col-sm-2">
+        09:00 - 09:20
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Opening remarks
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <a href="http://aimerykong.github.io/" target="_blank"><strong>Shu Kong</strong></a>
+	<span style="color:#999999;">University of Macau</span><br>
+		<strong>Visual Perception via Learning in an Open World</strong>
+      </div>	        
+      <div class="col-xs-12 col-sm-2">
+	      <a href="./autoexpert-arena_files/autoexpert-arena-5-Opening-Remark.pdf">slides</a>
+      </div>
+    </div>
+
+
+    <div class="row slot-colored">
+      <div class="col-xs-12 col-sm-2">
+          09:20 - 10:00
+      </div>
+      <div class="col-xs-12 col-sm-2">
+          Invited talk #1
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://www.cs.utexas.edu/~grauman/" target="_blank"><strong>Kristen Grauman</strong></a>,
+	      <span style="color:#999999;">UT Austin</span><br>
+		<strong>Human activity in the open world</strong>
+      </div>	    
+      <div class="col-xs-12 col-sm-2">
+	      <!--a href="./">slides</a-->
+      </div>
+    </div>
+
+
+
+
+    <div class="row slot">
+      <div class="col-xs-12 col-sm-2">
+        10:00 - 10:40
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Invited talk #2
+      </div>
+      <div class="col-xs-12 col-sm-6">	      
+	      <a href="https://gunshigupta.netlify.app/" target="_blank"><strong>Gunshi Gupta</strong></a>,
+	      <a href="https://www.cs.ox.ac.uk/people/yarin.gal/website/" target="_blank"><strong>Yarin Gal</strong></a>,
+	      <span style="color:#999999;">University of Oxford</span><br>
+		<strong>tba</strong>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+    </div>
+
+
+
+
+<div class="row slot-colored">
+      <div class="col-xs-12 col-sm-2">
+        10:40 - 11:20
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Invited talk #3
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://gvh.codes/" target="_blank"><strong>Grant Van Horn</strong></a>,
+	      <span style="color:#999999;">UMass-Amherst</span><br>
+		<strong>Merlin Sound ID</strong>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+</div>
+
+
+<div class="row slot">
+      <div class="col-xs-12 col-sm-2">
+        11:20 - 12:00
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Invited talk #4
+      </div>
+	
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://www.cs.cmu.edu/~abhinavg/" target="_blank"><strong>Abhinav Gupta</strong></a>,
+	      <span style="color:#999999;">CMU</span><br>
+		<strong>Scaling Robotics via Open World Visual Learning</strong>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+    </div>
+
+
+
+    <div class="row slot-colored">
+      <div class="col-xs-12 col-sm-2">
+        12:00 - 13:00
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <strong>Lunch</strong>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+      <img src="./autoexpert-arena_files/lunch-break.webp" width="50">
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+    </div>
+
+
+
+
+     <div class="row slot">
+      <div class="col-xs-12 col-sm-2">
+        13:00 - 13:40
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Invited talk #5
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://yxw.cs.illinois.edu/" target="_blank"><strong>Yuxiong Wang</strong></a>,
+	      <span style="color:#999999;">UIUC</span><br>
+		<strong>Putting Context First in Open-World Perception</strong>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+    </div>
+
+
+
+    <div class="row slot-colored">
+      <div class="col-xs-12 col-sm-2">
+        13:40 - 14:20
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Invited talk #6
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://www.cs.cmu.edu/~dpathak/" target="_blank"><strong>Deepak Pathak</strong></a>,
+	      <span style="color:#999999;">CMU</span><br>
+		<strong>Learning to Reason via RL In the Open World</strong>
+      </div>
+      <!--div class="col-xs-12 col-sm-2">
+	      <a href="./autoexpert-arena_files/Tal-talk.pdf">slides</a>
+      </div-->
+    </div>
+
+
+
+
+
+    <div class="row slot">
+      <div class="col-xs-12 col-sm-2">
+        14:20 - 15:00
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Invited talk #7
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://lgui.web.illinois.edu/" target="_blank"><strong>Liangyan Gui</strong></a>,
+	      <span style="color:#999999;">UIUC</span><br>
+		<strong>Animating Human-Object Interactions in the Wild</strong>
+      </div>
+      <!--div class="col-xs-12 col-sm-2">
+	      <a href="./autoexpert-arena_files/Tal-talk.pdf">slides</a>
+      </div-->
+    </div>
+
+
+
+
+
+    <div class="row slot-colored">
+      <div class="col-xs-12 col-sm-2">
+        15:00 - 15:05
+      </div>
+      <div class="col-xs-12 col-sm-2">
+       <strong>Coffee break</strong>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	<img src="./autoexpert-arena_files/np_coffee2.png" width="30">
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+    </div>
+
+
+
+<div class="row slot">
+      <div class="col-xs-12 col-sm-2">
+        15:05 - 15:45
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Challenge-1
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://eval.ai/web/challenges/challenge-page/2478/overview" target="_blank"><strong>Challenge 1: InsDet</strong></a>
+		<br>
+		<strong>Object Instance Detection Challenge</strong><br>
+      </div>
+      <!--div class="col-xs-12 col-sm-2">
+	      <a href="./autoexpert-arena_files/Tal-talk.pdf">slides</a>
+      </div-->
+    </div>
+
+
+
+	
+
+<div class="row slot-colored">
+      <div class="col-xs-12 col-sm-2">
+        15:45 - 16:25
+      </div>
+	
+      
+      <div class="col-xs-12 col-sm-2">
+        Challenge-2
+      </div>
+      <div class="col-xs-12 col-sm-6">
+	      <a href="https://eval.ai/web/challenges/challenge-page/2459/overview" target="_blank"><strong> Challenge-2: Foundational FSOD</strong></a>
+		<br>
+		<strong>Foundational Few-Shot Object Detection Challenge v2</strong><br>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+    </div>
+
+	
+
+
+    <div class="row slot">
+      <div class="col-xs-12 col-sm-2">
+        16:25 - 16:30
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        Closing remarks
+      </div>
+	<div class="col-xs-12 col-sm-6">
+	      <a href="http://www.neeharperi.com/" target="_blank"><strong>Neehar Peri</strong></a>
+	      <span style="color:#999999;">CMU</span><br>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+      </div>
+    </div>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <hr><br>
+    <!-- Sponsors >
+    <div class="row">
+    <h2>Sponsors</h2>
+    <a class="anchor" id="sponsors"></a>
+        <a href="https://engineering.tamu.edu/cse/index.html" target="_blank"><img src="./autoexpert-arena_files/tamu_CSCE_logo_HMaroon.jpg" width="350"></a>
+        <a href="https://www.cmu.edu/" target="_blank"><img src="./autoexpert-arena_files/CMU-riLogo2019.svg" width="250"></a>
+        <a href="https://allenai.org/" target="_blank"><img src="./autoexpert-arena_files/ai2-logo-wide.png" width="300"></a>
+        <a href="https://illinois.edu/" target="_blank"><img src="./autoexpert-arena_files/uiuc-logo.png" width="200"></a>
+        <a href="https://www.umd.edu/" target="_blank"><img src="./autoexpert-arena_files/umd-logo.gif" width="200"></a>
+        <a href="https://www.umiacs.umd.edu/" target="_blank"><img src="./autoexpert-arena_files/Umiacs-logo.png" width="200"></a>
+        <a href="https://www.darpa.mil/" target="_blank"><img src="./autoexpert-arena_files/DARPA_logo_with_text.png" width="250"></a>
+	<a href="https://www.columbia.edu/" target="_blank"><img src="./autoexpert-arena_files/columbia-university-logo.png" width="160"></a><br><br>
+    </div-->
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<hr>
+<!-- Footer -->
+<div>
+<footer id="footer">
+<!-- <p class="copyright">&copy; Shu Kong -- Logo photo is created by Shu Kong. -->
+<p class="copyright"><font size="-1"> Website design adapted from <a href="http://ai.stanford.edu/~jingweij/cicv/">Compositionality in Computer Vision</a>.
+Logo photo is created by Shu Kong by composing two Flickr images.
+</font> </p>
+</footer>
+</div>
+
+
+<!-- jQuery and Boostrap -->
+<script src="./autoexpert-arena_files/jquery.min.js.download"></script>
+<script src="./autoexpert-arena_files/bootstrap.min.js.download"></script>
+
+
+ 
+
+<iframe src="./autoexpert-arena_files/saved_resource.html" style="display: none;"></iframe>
+</body></html>
